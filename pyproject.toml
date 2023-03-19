@@ -10,6 +10,9 @@ packages = [{include = "moni_serv"}]
 python = "^3.10"
 django = "^4.1.7"
 uvicorn = "^0.21.1"
+djangorestframework = "^3.14.0"
+markdown = "^3.4.1"
+django-filter = "^22.1"
 
 [build-system]
 requires = ["poetry-core"]
