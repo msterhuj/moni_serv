@@ -5,7 +5,7 @@ class Page(models.Model):
     """
     class representing a page regrouping all metrics
     """
-    title: models.CharField(max_length=255, unique=True, null=False)
+    title: models.CharField("title", max_length=255, unique=True, null=False)
     slug: models.SlugField(max_length=255, unique=True, null=False)
     default_root_page: models.BooleanField(default=False, null=False)
     description: models.TextField(null=False)
