@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "moni-serv"
+version = "0.1.0"
+description = "Dashboard and control for agent"
+authors = ["msterhuj <gabin.lanore@gmail.com>"]
+readme = "README.md"
+packages = [{include = "moni_serv"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.1.7"
+uvicorn = "^0.21.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
