@@ -1,0 +1,45 @@
+{% extends 'block/base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+    {% include 'block/nav.html' %}
+    <main class="container-fluid">
+        <h3>User: {{ user.username }}</h3>
+
+        <article>
+        <nav>
+            <ul>
+                <strong>Agent List</strong>
+            </ul>
+            <ul>
+              <li><a href="{% url 'create_agent' %}" role="button">Add</a></li>
+            </ul>
+        </nav>
+        {% if agents %}
+            <table>
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Active</th>
+                    <th scope="col">Created</th>
+                    <th scope="col">Last seen</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for agent in agents %}
+                <tr>
+                    <th scope="row">{{ agent.id }}</th>
+                    <td>{{ agent.name }}</td>
+                    <td>{{ agent.active }}</td>
+                    <td>{{ agent.created_at }}</td>
+                    <td>In dev</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+        <p><strong>No agent found</strong></p>
+        {% endif %}
+        </article>
+    </main>
+{% endblock %}

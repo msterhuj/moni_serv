@@ -2,7 +2,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
+        <title>{% block title %}Title not set{% endblock %}</title>
         <link rel="stylesheet" href="{% static 'pico.css' %}">
+
     </head>
     <body>
         {% block content %}{% endblock %}

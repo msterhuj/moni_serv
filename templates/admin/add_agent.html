@@ -1,0 +1,21 @@
+{% extends 'block/base.html' %}
+{% block title %}Dashboard | Create Agent {% endblock %}
+{% block content %}
+    {% include 'block/nav.html' %}
+    <main class="container">
+        <article>
+            {% if create_ok %}
+                <p>Token {{ token }}</p>
+            {% else %}
+            <form method="post", action="{% url 'create_agent'%}">
+                <div>
+                    <label>Name</label>
+                    <input type="name" name="agent_name" placeholder="Agent name" required>
+                </div>
+                {% csrf_token %} 
+                <button type="submit">Create</button>
+            </form>
+            {% endif %}
+        </article>
+    </main>
+{% endblock %}
